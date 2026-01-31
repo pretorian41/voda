@@ -1,0 +1,57 @@
+{% extends "base.html.twig" %}
+{% block meta %}<meta name="robots" content="noindex, nofollow">{% endblock %}
+{% block body %}
+        <!-- Header -->
+{#            <div class="text-center py-6">#}
+{#                <div class="text-sky-800 font-semibold text-3xl leading-none">#}
+{#                    <span class="text-4xl font-bold">К</span>оцюбинська#}
+{#                </div>#}
+{#                <div class="uppercase tracking-[0.3em] text-sm text-sky-700 mt-1">#}
+{#                    вода#}
+{#                </div>#}
+{#            </div>#}
+
+            <!-- Content -->
+            <div class="px-6 text-center">
+                <h1 class="text-[26px] leading-tight font-semibold text-sky-900 mb-6">
+                    Дякуємо вам<br>за замовлення!
+                </h1>
+
+                <div class="flex items-center justify-center gap-3 mb-4">
+                    <div class="w-9 h-9 rounded-full bg-emerald-500 flex items-center justify-center text-white text-xl">
+                        ✓
+                    </div>
+                    <p class="text-left text-sky-900">
+                        Ми не будемо вам<br>передзвонювати.
+                    </p>
+                </div>
+
+                <p class="text-lg font-semibold text-sky-900 mb-6">
+                    Очікуйте на доставку!
+                </p>
+
+                <!-- Scene -->
+                <div class="relative h-[220px]">
+                    <img
+                        src="{{ asset('build/images/bottles.png') }}"
+                        alt="Вода"
+                        class="absolute bottom-0 left-2 w-[140px]"
+                    >
+                    <img
+                        src="{{ asset('build/images/courier.png') }}"
+                        alt="Доставка"
+                        class="absolute bottom-0 right-0 w-[220px]"
+                    >
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="p-6">
+                <a href="{{ path('index') }}"
+                   class="block w-full text-center py-4 rounded-2xl text-lg font-medium text-white
+          bg-gradient-to-b from-sky-400 to-sky-600
+          hover:opacity-90 transition">
+                    Добре, дякую!
+                </a>
+            </div>
+{% endblock %}

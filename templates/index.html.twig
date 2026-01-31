@@ -1,0 +1,101 @@
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <!-- HERO -->
+    <div class="relative">
+
+{#        <div#}
+{#            class="w-full h-[220px] bg-[url('{{ asset('build/images/logo_small.png') }}')] bg-cover bg-center"#}
+{#        ></div>#}
+        <!-- Logo -->
+{#        <div class="absolute top-4 left-4 text-sky-800">#}
+{#            <div class="text-2xl font-semibold leading-none">#}
+{#                <span class="text-3xl font-bold">К</span>оцюбинська#}
+{#            </div>#}
+{#            <div class="uppercase tracking-[0.25em] text-xs">вода</div>#}
+{#        </div>#}
+
+        <!-- Burger -->
+        <button class="absolute top-4 right-4 text-sky-800">
+            ☰
+        </button>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="px-5 py-6">
+        <h1 class="text-[26px] font-semibold text-sky-900 leading-tight mb-4">
+            Доставка води<br>по Коцюбинському
+        </h1>
+
+        <!-- Price -->
+        <div class="flex items-start gap-2 mb-3">
+            <span class="text-xl">💧</span>
+            <p class="text-sky-900">
+                Вартість 1 бутля<br>
+                з доставкою —
+                <span class="font-semibold">95 грн</span>
+            </p>
+        </div>
+
+        <!-- Delivery time -->
+        <div class="flex items-start gap-2 mb-5">
+            <span class="text-xl">🚚</span>
+            <p class="text-sky-900">
+                Доставка щодня<br>
+                з понеділка по пʼятницю
+            </p>
+        </div>
+        {{ form_start(form, {
+            attr: { class: 'space-y-3' }
+        }) }}
+
+        {% for field in form %}
+            {% if field.vars.name != '_token' %}
+                {{ form_widget(field, {
+                    attr: {
+                        class: 'w-full rounded-xl border border-slate-200 px-4 py-3
+                focus:outline-none focus:ring-2 focus:ring-sky-400'
+                    }
+                }) }}
+            {% endif %}
+        {% endfor %}
+
+        <button
+            type="submit"
+            class="w-full py-4 rounded-2xl text-lg font-medium text-white
+   bg-gradient-to-b from-sky-400 to-sky-600
+   hover:opacity-90 transition">
+            Замовити воду
+        </button>
+
+        {{ form_end(form) }}
+
+    </div>
+
+
+    <section class="px-5 py-8 text-slate-700 text-sm leading-relaxed space-y-4">
+        <p>
+            <strong>Коцюбинська вода</strong> — це швидка та зручна
+            <strong>доставка питної води у Коцюбинському</strong>.
+            Ми працюємо у передмісті Києва та доставляємо воду
+            у житлові будинки, офіси та заклади поруч з
+            <strong>Lavina Mall</strong>.
+        </p>
+
+        <p>
+            Пропонуємо очищену питну воду у бутлях 19 літрів.
+            Вартість одного бутля з доставкою —
+            <strong>95 грн</strong>.
+            Доставка здійснюється з понеділка по пʼятницю.
+        </p>
+
+        <p>
+            Якщо вам потрібна
+            <strong>доставка води у Коцюбинському без дзвінків</strong>,
+            просто залиште заявку на сайті —
+            ми швидко опрацюємо замовлення.
+        </p>
+    </section>
+{% endblock %}
