@@ -54,7 +54,6 @@ class WaterOrderType extends AbstractType
                     'class' => $input,
                 ],
             ])
-            ->add('save', SubmitType::class)
         ;
 //
         ;
