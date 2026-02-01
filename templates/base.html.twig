@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="{{ asset('build/images/favicon.ico') }}" type="image/x-icon">
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
@@ -30,11 +31,18 @@
         {% endblock %}
     </head>
     <body class="bg-slate-100">
-    <div class="bg-slate-100 flex justify-center py-4 px-2">
+    <div class="min-h-screen bg-slate-100 flex justify-center px-2">
         <div
-            class="w-full max-w-[420px] my-4 sm:my-8
-               rounded-3xl overflow-hidden shadow-2xl
-               bg-gradient-to-b from-sky-200 via-sky-50 to-white">
+            class="
+    w-full
+    md:max-w-md
+    my-4 md:my-8
+    rounded-3xl
+    overflow-hidden
+    shadow-2xl
+    bg-gradient-to-b from-sky-200 via-sky-50 to-white
+      "
+        >
 
             <!-- Header / Logo -->
             <div
