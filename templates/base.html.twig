@@ -9,7 +9,7 @@
             <title>Доставка води у Коцюбинському — Коцюбинська вода | 95 грн</title>
 
             <meta name="description"
-                  content="Доставка питної води у Коцюбинському ✔ 19 л бутлі ✔ 95 грн з доставкою ✔ Поруч Lavina Mall ✔ Передмістя Києва. Замовляйте онлайн без дзвінків.">
+                  content="Доставка питної води у Коцюбинському ✔ 19 л бутлі ✔ 95 грн з доставкою ✔ Передмістя Києва. Замовляйте онлайн без дзвінків.">
 
             <meta name="keywords"
                   content="доставка води Коцюбинське, вода Коцюбинське, питна вода Коцюбинське, доставка води Lavina, вода передмістя Києва">
@@ -19,7 +19,7 @@
             <!-- OpenGraph -->
             <meta property="og:title" content="Доставка води у Коцюбинському — Коцюбинська вода">
             <meta property="og:description"
-                  content="Питна вода 19 л з доставкою у Коцюбинському. Поруч Lavina Mall. 95 грн. Без дзвінків.">
+                  content="Питна вода 19 л з доставкою у Коцюбинському. 95 грн. Без дзвінків.">
             <meta property="og:type" content="website">
             <meta property="og:url" content="https://kotsyubinska-voda.com.ua/">
             <meta property="og:image" content="https://kotsyubinska-voda.com.ua/images/og-water.jpg">
@@ -29,13 +29,20 @@
             <meta name="geo.placename" content="Коцюбинське">
         {% endblock %}
     </head>
-    <body>
+    <body class="bg-slate-100">
+    <div class="bg-slate-100 flex justify-center py-4 px-2">
+        <div
+            class="w-full max-w-[420px] my-4 sm:my-8
+               rounded-3xl overflow-hidden shadow-2xl
+               bg-gradient-to-b from-sky-200 via-sky-50 to-white">
 
-    <div class="min-h-screen bg-slate-100 flex justify-center">
+            <!-- Header / Logo -->
+            <div
+                class="flex justify-center items-center
 
-        <div class="w-full max-w-[420px] rounded-3xl overflow-hidden shadow-2xl
-            bg-gradient-to-b from-sky-200 via-sky-50 to-white">
-            <div class="bg-sky-100 py-6 flex justify-center">
+                   py-6 sm:py-8
+                   bg-gradient-to-b from-sky-300 to-sky-200">
+
                 <img
                     src="{{ asset('build/images/logo.png') }}"
                     alt="Доставка води"
@@ -44,9 +51,12 @@
             </div>
 
             {% block body %}{% endblock %}
+
         </div>
     </div>
+
     </body>
+
 
 
     {% block javascripts %}
@@ -66,7 +76,7 @@
             },
             "areaServed": {
                 "@type": "Place",
-                "name": "Коцюбинське, Lavina Mall"
+                "name": "Коцюбинське"
             },
             "priceRange": "₴₴",
             "serviceType": "Доставка питної води"

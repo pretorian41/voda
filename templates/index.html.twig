@@ -2,20 +2,10 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
     <!-- HERO -->
     <div class="relative">
 
-{#        <div#}
-{#            class="w-full h-[220px] bg-[url('{{ asset('build/images/logo_small.png') }}')] bg-cover bg-center"#}
-{#        ></div>#}
-        <!-- Logo -->
-{#        <div class="absolute top-4 left-4 text-sky-800">#}
-{#            <div class="text-2xl font-semibold leading-none">#}
-{#                <span class="text-3xl font-bold">К</span>оцюбинська#}
-{#            </div>#}
-{#            <div class="uppercase tracking-[0.25em] text-xs">вода</div>#}
-{#        </div>#}
+
 
         <!-- Burger -->
         <button class="absolute top-4 right-4 text-sky-800">
@@ -24,7 +14,7 @@
     </div>
 
     <!-- CONTENT -->
-    <div class="px-5 py-6">
+    <div class="px-5 py-6 text-left">
         <h1 class="text-[26px] font-semibold text-sky-900 leading-tight mb-4">
             Доставка води<br>по Коцюбинському
         </h1>
@@ -51,17 +41,41 @@
             attr: { class: 'space-y-3' }
         }) }}
 
+        {{ form_widget(form.website) }}
         {% for field in form %}
-            {% if field.vars.name != '_token' %}
+            {% if  field.vars.name not  in ['_token', 'website'] %}
+
+                {% set hasError = field.vars.errors|length > 0 %}
+
                 {{ form_widget(field, {
                     attr: {
-                        class: 'w-full rounded-xl border border-slate-200 px-4 py-3
-                focus:outline-none focus:ring-2 focus:ring-sky-400'
+                        class: '
+                    w-full
+                    rounded-2xl
+                    border-2
+                    bg-white
+                    px-4 py-3
+                    text-sky-900
+                    placeholder-sky-400
+                    shadow-sm
+                    focus:outline-none
+                    focus:ring-4
+                    transition
+                    ' ~ (
+                        hasError
+                        ? 'border-red-400 focus:border-red-500 focus:ring-red-200'
+                        : 'border-sky-200 focus:border-sky-500 focus:ring-sky-200'
+                        )
                     }
                 }) }}
+
+                {% for error in field.vars.errors %}
+                    <p class="mt-1 text-sm text-red-600 font-medium">
+                        {{ error.message }}
+                    </p>
+                {% endfor %}
             {% endif %}
         {% endfor %}
-
         <button
             type="submit"
             class="w-full py-4 rounded-2xl text-lg font-medium text-white
@@ -80,8 +94,7 @@
             <strong>Коцюбинська вода</strong> — це швидка та зручна
             <strong>доставка питної води у Коцюбинському</strong>.
             Ми працюємо у передмісті Києва та доставляємо воду
-            у житлові будинки, офіси та заклади поруч з
-            <strong>Lavina Mall</strong>.
+            у житлові будинки, офіси.
         </p>
 
         <p>

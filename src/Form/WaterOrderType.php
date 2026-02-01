@@ -31,8 +31,11 @@ class WaterOrderType extends AbstractType
             ->add('phone', TelType::class, [
                 'label' => false,
                 'attr' => [
-                    'placeholder' => 'Телефон',
+                    'placeholder' => '+380 (__) ___-__-__',
                     'class' => $input,
+                    'data-phone' => '1',
+                    'inputmode' => 'tel',
+                    'autocomplete' => 'tel',
                 ],
             ])
 
@@ -54,6 +57,15 @@ class WaterOrderType extends AbstractType
                     'class' => $input,
                 ],
             ])
+            ->add('website', TextType::class, [
+                'mapped' => false,
+                'required' => false,
+                'attr' => [
+                    'tabindex' => '-1',
+                    'autocomplete' => 'off',
+                    'class' => 'hidden',
+                ],
+            ]);
         ;
 //
         ;

@@ -8,3 +8,17 @@ import './stimulus_bootstrap.js';
 
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.css';
+import Inputmask from 'inputmask';
+
+document.addEventListener('DOMContentLoaded', () => {
+    const phones = document.querySelectorAll('[data-phone]');
+
+    if (!phones.length) return;
+
+    Inputmask({
+        mask: '+380 (99) 999-99-99',
+        showMaskOnHover: false,
+        showMaskOnFocus: true,
+        clearIncomplete: true,
+    }).mask(phones);
+});

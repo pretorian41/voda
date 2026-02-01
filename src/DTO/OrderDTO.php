@@ -13,7 +13,7 @@ class OrderDTO
         minMessage: 'Імʼя занадто коротке'
         ),
     ]
-    public string $name;
+    public ?string $name = null;
     #[Assert\NotBlank(message: 'Вкажіть телефон')]
     #[
         Assert\Regex(
@@ -21,21 +21,21 @@ class OrderDTO
             message: 'Невірний формат телефону'
         )
     ]
-    public string $phone;
+    public ?string $phone = null;
     #[Assert\NotBlank(message: 'Вкажіть кількість')]
     #[Assert\GreaterThanOrEqual(
-value: 1,
-message: 'Мінімум 1 бутель'
-)]
+    value: 1,
+    message: 'Мінімум 1 бутель'
+    )]
     #[Assert\LessThanOrEqual(
     value: 20,
     message: 'Максимум 20 бутелів'
     )]
-    public int $amount;
+    public ?int $amount = null;
     #[Assert\NotBlank(message: 'Вкажіть адресу доставки')]
     #[Assert\Length(
-min: 10,
-minMessage: 'Адреса занадто коротка'
-)]
-    public string $address;
+    min: 10,
+    minMessage: 'Адреса занадто коротка'
+    )]
+    public ?string $address = null;
 }
